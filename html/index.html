@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<!--[if IE 7]>
+<html class="ie ie7" lang="en-US">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8" lang="en-US">
+<![endif]-->
+<!--[if IE 9]>
+<html class="ie ie9" lang="en-US">
+<![endif]-->
+<!--[if !(IE 7) | !(IE 8) | !(IE 9)  ]><!-->
+<html lang="en-US">
+<!--<![endif]-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+
+<title>Choose between Office 365 and Gmail</title>
+<link rel="icon" href="images/favicon.ico">
+<link rel="stylesheet" href="style.css" type="text/css" media="screen,print">
+<link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css" media="screen,print">
+<!-- analytics? -->
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/opt.js"></script>
+</head>
+
+<body>
+
+<header class="site-header">		
+	<div class="site-branding-wrapper">
+		<div class="site-branding">
+			<h1 class="brand-title"><a href="http://www.usc.edu">University of Southern California</a></h1>
+		</div><!-- .site-branding -->
+	</div><!-- .site-branding-wrapper -->
+</header>
+
+<div class="content-area unshifted">
+	<div class="main">
+		<h1>Change My Email</h1>
+		<p class="description">You are about to change your preferred email inbox. Before changing your email, you may wish to <a href="#">review the differences between Microsoft Office 365 and Google Apps at USC</a>. </p>
+
+		<form class="step step-1 ajax find-netid" action="netid.php" id="find-id" method="post" novalidate> 
+			<input type="hidden" name="uscnetid" value="<?php if(isset($_SERVER['ShibuscNetID'])) { echo $_SERVER['ShibuscNetID']; } ?>">
+			<ol class="vertical-steps">
+				<li><strong>Make Your Choice</strong>
+					<!-- show/hide options are only visible if javascript is available -->
+					<div class="choose" id="choose" data-choice="office">
+						<div class="toggle o365"><a href="#office" class="toggler active">Office 365</a></div>
+						<div class="slidewrapper">
+							<div class="office"><a href="#office" class="office slide"></a></div>
+							<a href="#change" class="choice"></a>
+							<div class="google"><a href="#google" class="google slide"></a></div>
+						</div>
+						<div class="toggle ga"><a href="#google" class="toggler">Google Apps</a></div>
+					</div>
+				</li>
+				<li><strong>Confirm Your Choice</strong>
+					<div class="blah">
+						<p>Confirm that you agree to change your email by clicking the button below. Please note that it may take <strong>up to an hour</strong> for your email to start appearing in your new email inbox. If you have questions, please contact the ITS Customer Support Center at <a href="mailto:consult@usc.edu">consult@usc.edu</a> or <a href="tel:12137405555">213-740-5555</a>.</p>
+						<p>If you do not wish to change your preferred email inbox at this time, you may exit this page by clicking your browser's Back button or closing the browser window.</p>
+					</div>
+				</li>
+			</ol>
+				
+			<button tabindex="30" type="submit" value="submit">Change My Email</button>
+		</form>
+	</div>
+	<div class="help-area"></div>
+
+</div>
+
+<footer>
+	<span>Call us at <a href="tel:+1-213-740-5555">213-740-5555</a></span>
+	<span class="divider"><a href="mailto:consult@usc.edu">consult@usc.edu</a></span>
+</footer>
+</body>
+</html>
